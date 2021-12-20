@@ -46,7 +46,7 @@ def home(request):
         ip = x_forwarded_for.split(',')[0]
     else:
         ip = request.META.get('REMOTE_ADDR')
-    response = requests.get('http://api.ipstack.com/'+ip+'?access_key=edab438d327c57d5f44bdc084da92b7c') #change from HTTP to HTTPS on the IPSTACK API if you have a premium account
+    response = requests.get('http://api.ipstack.com/'+ip+'?access_key=your access key of ip stack') #change from HTTP to HTTPS on the IPSTACK API if you have a premium account
     rawData = response.json()
     print(rawData) # print this out to look at the response
     continent = rawData['continent_name']
